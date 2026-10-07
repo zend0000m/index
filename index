@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    body {
+      margin: 0;
+      background: #191919;
+      color: #eeeeee;
+      font-family: monospace;
+    }
+
+    .panel {
+      display: flex;
+      gap: 1px;
+      background: #333;
+    }
+
+    .ticker {
+      flex: 1;
+      background: #191919;
+      padding: 14px 18px;
+    }
+
+    .symbol {
+      color: #888;
+      font-size: 11px;
+    }
+
+    .price {
+      font-size: 20px;
+      margin-top: 4px;
+    }
+
+    .positive {
+      color: #67c587;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="panel">
+    <div class="ticker">
+      <div class="symbol">XAUUSD</div>
+      <div class="price">4026.30</div>
+      <div class="positive">+0.62%</div>
+    </div>
+
+    <div class="ticker">
+      <div class="symbol">SPX</div>
+      <div class="price">6812.40</div>
+      <div class="positive">+0.14%</div>
+    </div>
+  </div>
+</body>
+</html>
