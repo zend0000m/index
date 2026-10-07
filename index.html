@@ -1,134 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+
+  <title>QNT Workspace</title>
+</head>
+
+<body>
 <div class="market-shell">
 
-  <div class="ambient"></div>
-
   <div class="topbar">
-    <div class="brand">
-      <span class="brand-main">QNT</span>
-      <span class="brand-sub">/ WORKSPACE</span>
+    <div>
+      <span class="brand">QNT</span>
+      <span class="muted"> / WORKSPACE</span>
     </div>
 
-    <div class="clock" id="clock">--:--:--</div>
+    <div class="clock" id="clock">--:--:-- CET</div>
   </div>
 
   <div class="statusbar">
-    <div class="online">
+    <div class="market-status">
       <span class="pulse"></span>
       MARKETS ONLINE
     </div>
 
     <div class="sessions">
-      <span>LONDON <b>CLOSED</b></span>
-      <span>NEW YORK <b>CLOSED</b></span>
+      LONDON <span>CLOSED</span>
+      &nbsp;&nbsp;
+      NEW YORK <span>CLOSED</span>
     </div>
   </div>
 
-  <div class="ticker-grid">
+  <div class="grid">
 
-    <div class="ticker">
-      <div class="ticker-top">
-        <span class="symbol">XAUUSD</span>
-        <span class="tag">GOLD</span>
+    <div class="ticker gold-ticker">
+      <div class="ticker-head">
+        <span>XAUUSD</span>
+        <small>GOLD</small>
       </div>
 
-      <div class="ticker-price">
-        4,026.30
-      </div>
+      <div class="price">4,026.30</div>
+      <div class="positive">+0.62%</div>
 
-      <div class="change positive">
-        +0.62%
-      </div>
-
-      <svg class="sparkline" viewBox="0 0 160 40">
+      <svg class="spark" viewBox="0 0 200 45"
+           preserveAspectRatio="none">
         <path
-          class="spark-path gold"
-          d="M2 30 C15 28,20 32,30 25
-             S45 12,55 20
-             S70 31,82 22
-             S100 10,112 14
-             S130 8,158 5"
-        />
+          d="M0 35
+             C20 38, 30 30, 45 28
+             S70 8, 88 24
+             S115 35, 130 20
+             S160 15, 200 7">
+        </path>
       </svg>
     </div>
 
 
     <div class="ticker">
-      <div class="ticker-top">
-        <span class="symbol">SPX</span>
-        <span class="tag">INDEX</span>
+      <div class="ticker-head">
+        <span>SPX</span>
+        <small>INDEX</small>
       </div>
 
-      <div class="ticker-price">
-        6,812.40
-      </div>
+      <div class="price">6,812.40</div>
+      <div class="positive">+0.14%</div>
 
-      <div class="change positive">
-        +0.14%
-      </div>
-
-      <svg class="sparkline" viewBox="0 0 160 40">
+      <svg class="spark" viewBox="0 0 200 45"
+           preserveAspectRatio="none">
         <path
-          class="spark-path positive-line"
-          d="M2 27 C18 29,25 20,40 21
-             S62 26,76 18
-             S95 22,110 13
-             S137 15,158 8"
-        />
+          d="M0 32
+             C25 28, 38 31, 55 20
+             S85 25, 105 18
+             S140 20, 160 10
+             S180 13, 200 6">
+        </path>
       </svg>
     </div>
 
 
     <div class="ticker">
-      <div class="ticker-top">
-        <span class="symbol">BTCUSD</span>
-        <span class="tag">CRYPTO</span>
+      <div class="ticker-head">
+        <span>BTCUSD</span>
+        <small>CRYPTO</small>
       </div>
 
-      <div class="ticker-price">
-        121,430
-      </div>
+      <div class="price">121,430</div>
+      <div class="negative">−0.31%</div>
 
-      <div class="change negative">
-        −0.31%
-      </div>
-
-      <svg class="sparkline" viewBox="0 0 160 40">
+      <svg class="spark red" viewBox="0 0 200 45"
+           preserveAspectRatio="none">
         <path
-          class="spark-path negative-line"
-          d="M2 10 C20 8,28 20,42 14
-             S58 7,72 18
-             S90 31,104 23
-             S125 18,158 31"
-        />
+          d="M0 10
+             C22 14, 35 6, 52 19
+             S75 30, 90 19
+             S120 20, 135 29
+             S175 23, 200 35">
+        </path>
       </svg>
     </div>
 
 
     <div class="ticker">
-      <div class="ticker-top">
-        <span class="symbol">DXY</span>
-        <span class="tag">FX</span>
+      <div class="ticker-head">
+        <span>DXY</span>
+        <small>FX</small>
       </div>
 
-      <div class="ticker-price">
-        98.74
-      </div>
+      <div class="price">98.74</div>
+      <div class="negative">−0.21%</div>
 
-      <div class="change negative">
-        −0.21%
-      </div>
-
-      <svg class="sparkline" viewBox="0 0 160 40">
+      <svg class="spark neutral" viewBox="0 0 200 45"
+           preserveAspectRatio="none">
         <path
-          class="spark-path neutral-line"
-          d="M2 12 C15 14,27 10,40 17
-             S60 29,75 23
-             S90 13,105 22
-             S130 27,158 25"
-        />
+          d="M0 15
+             C30 10, 45 20, 65 18
+             S95 30, 115 22
+             S145 17, 165 25
+             S185 22, 200 27">
+        </path>
       </svg>
     </div>
 
   </div>
 
 </div>
+<script src="script.js"></script>
+
+</body>
+</html>
