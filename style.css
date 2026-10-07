@@ -1,0 +1,267 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background: #191919;
+  color: #ededed;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.market-shell {
+  position: relative;
+  overflow: hidden;
+
+  padding: 20px 22px;
+
+  background:
+    radial-gradient(
+      circle at 5% 0%,
+      rgba(191, 154, 84, 0.07),
+      transparent 30%
+    ),
+    #191919;
+
+  border: 1px solid #303030;
+  border-radius: 10px;
+}
+
+
+/* HEADER */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 13px;
+}
+
+.brand {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+}
+
+.muted {
+  font-family: monospace;
+  color: #707070;
+  font-size: 10px;
+}
+
+.clock {
+  font-family: monospace;
+  font-size: 10px;
+  color: #777;
+}
+
+
+/* MARKET STATUS */
+
+.statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 9px 0;
+
+  border-top: 1px solid #292929;
+  border-bottom: 1px solid #292929;
+
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 0.8px;
+
+  color: #777;
+}
+
+.market-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #aaa;
+}
+
+.pulse {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+  background: #67bd89;
+
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(103,189,137,.35);
+  }
+
+  70% {
+    box-shadow: 0 0 0 6px rgba(103,189,137,0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(103,189,137,0);
+  }
+}
+
+.sessions span {
+  color: #4d4d4d;
+}
+
+
+/* TICKERS */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-top: 12px;
+}
+
+.ticker {
+  padding: 9px 18px 3px;
+
+  border-right: 1px solid #292929;
+
+  min-width: 0;
+
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+.ticker:first-child {
+  padding-left: 2px;
+}
+
+.ticker:last-child {
+  border-right: none;
+}
+
+.ticker:hover {
+  background: rgba(255,255,255,.018);
+  transform: translateY(-1px);
+}
+
+.ticker-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: monospace;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+
+  color: #aaa;
+}
+
+.ticker-head small {
+  font-size: 8px;
+  color: #555;
+}
+
+.price {
+  margin-top: 7px;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+
+  font-size: 18px;
+
+  color: #efefef;
+}
+
+.positive,
+.negative {
+  margin-top: 2px;
+
+  font-family: monospace;
+  font-size: 10px;
+}
+
+.positive {
+  color: #66bb88;
+}
+
+.negative {
+  color: #ce6c72;
+}
+
+
+/* SPARKLINES */
+
+.spark {
+  display: block;
+
+  width: 100%;
+  height: 38px;
+
+  margin-top: 7px;
+}
+
+.spark path {
+  fill: none;
+
+  stroke: #79867d;
+  stroke-width: 1.4;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  vector-effect: non-scaling-stroke;
+
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+
+  animation: draw 1.2s ease forwards;
+}
+
+.gold-ticker .spark path {
+  stroke: #b49c67;
+}
+
+.spark.red path {
+  stroke: #84676b;
+}
+
+.spark.neutral path {
+  stroke: #707070;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ticker {
+    border-bottom: 1px solid #292929;
+  }
+
+  .sessions {
+    display: none;
+  }
+}
